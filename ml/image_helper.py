@@ -14,7 +14,6 @@ def box_cxcywh_to_xyxy(x):
 def rescale_bboxes(out_bbox, size):
     img_w, img_h = size
 
-    print(f"Image size is {img_w} * {img_h}")
     b = box_cxcywh_to_xyxy(out_bbox)
     b = b * torch.tensor([img_w, img_h, img_w, img_h], dtype=torch.float32)
     return b
